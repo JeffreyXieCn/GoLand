@@ -1,3 +1,13 @@
+# Sonarqube
+.scannerwork
+
+# Miscellaneous
+.DS_Store
+.vscode
+.cache/
+.idea
+*.swp
+
 # Binaries for programs and plugins
 *.exe
 *.exe~
