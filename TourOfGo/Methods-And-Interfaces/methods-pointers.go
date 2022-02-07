@@ -9,6 +9,7 @@ type Vertex2 struct {
 	X, Y float64
 }
 
+// In general, all methods on a given type should have either value or pointer receivers, but not a mixture of both
 func (v Vertex2) Abs() float64 {
 	return math.Sqrt(v.X*v.X + v.Y*v.Y)
 }
