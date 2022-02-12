@@ -9,6 +9,32 @@ type Abser interface {
 	Abs() float64
 }
 
+func do(i interface{}) {
+	switch v := i.(type) {
+	case int:
+		fmt.Printf("Twice %v is %v\n", v, v*2)
+	case string:
+		fmt.Printf("%q is %v bytes long\n", v, len(v))
+	default:
+		fmt.Printf("I don't know about type %T!\n", v)
+	}
+}
+
+type Person struct {
+	Name string
+	Age  int
+}
+
+func (p Person) String() string {
+	return fmt.Sprintf("%v (%v years)", p.Name, p.Age)
+}
+
+type IPAddr [4]byte
+
+func (ip IPAddr) String() string {
+	return fmt.Sprintf("%v.%v.%v.%v", ip[0], ip[1], ip[2], ip[3])
+}
+
 func main() {
 	var a Abser
 	f := MyFloat(-math.Sqrt2)
@@ -25,6 +51,25 @@ func main() {
 	// a = v
 
 	fmt.Println(a.Abs())
+
+	fmt.Println("\n=========Type Switches=========")
+	do(21)
+	do("hello")
+	do(true)
+
+	fmt.Println("\n=========ubiquitous interfaces Stringer=========")
+	p := Person{"Arthur Dent", 42}
+	z := Person{"Zaphod Beeblebrox", 9001}
+	fmt.Println(p, z)
+
+	fmt.Println("\n=========Exercise: Stringers=========")
+	hosts := map[string]IPAddr{
+		"loopback":  {127, 0, 0, 1},
+		"googleDNS": {8, 8, 8, 8},
+	}
+	for name, ip := range hosts {
+		fmt.Printf("%v: %v\n", name, ip)
+	}
 }
 
 type MyFloat float64
