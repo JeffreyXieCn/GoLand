@@ -90,4 +90,23 @@ func main() {
 	//fmt.Println(needInt(Big)) // constant 1267650600228229401496703205376 overflows int
 	fmt.Println(needFloat(Small))
 	fmt.Println(needFloat(Big))
+
+	fmt.Println("========Be careful of float32========")
+	var f3 float32 = 16777216 // 1 << 24
+	fmt.Println(f3 == f3+1)   // true !
+	var f4 = f3 + 1
+	fmt.Println(f3 == f4)   // true !
+	fmt.Println(f3 == f3+2) // false !
+
+	fmt.Println("========Complex number========")
+	fmt.Println(1i * 1i) // (-1+0i)
+
+	fmt.Println("========String========")
+	str := "Hello 世界"
+	fmt.Println(len(str)) // 12
+	fmt.Println(str[6:9]) // 世
+	fmt.Println(str[9:])  // 界
+
+	str2 := "Hello \u4e16\u754c"
+	fmt.Println(str2) // 12
 }

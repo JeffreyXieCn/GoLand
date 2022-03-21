@@ -11,6 +11,7 @@ func main() {
 	a[1] = "World"
 	fmt.Println(a[0], a[1])
 	fmt.Println(a)
+	fmt.Printf("%q\n", a) // from the output we know it's an array of two strings
 
 	primes := [6]int{2, 3, 5, 7, 11, 13}
 	fmt.Println(primes)
@@ -131,6 +132,8 @@ func main() {
 	fmt.Println("=============Appending to a slice===============")
 	var sliceToAppend []int
 	printSlice(sliceToAppend)
+
+	fmt.Println("sliceToAppend == nil", sliceToAppend == nil)
 
 	// append works on nil slices.
 	sliceToAppend = append(sliceToAppend, 0)
