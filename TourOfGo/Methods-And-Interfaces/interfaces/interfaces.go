@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"math"
+	"sort"
 )
 
 type Abser interface {
@@ -70,6 +71,13 @@ func main() {
 	for name, ip := range hosts {
 		fmt.Printf("%v: %v\n", name, ip)
 	}
+
+	fmt.Println("\n=========Sorting=========")
+	names := []string{"Jeffrey", "Shirley", "Liya"}
+	sort.Strings(names)
+	fmt.Println(names)
+	sort.Sort(sort.Reverse(sort.StringSlice(names)))
+	fmt.Println(names)
 }
 
 type MyFloat float64

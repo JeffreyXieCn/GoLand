@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"math"
+	"time"
 )
 
 type Vertex struct {
@@ -37,4 +38,7 @@ func main() {
 
 	f := MyFloat(-math.Sqrt2)
 	fmt.Println(f.Abs())
+
+	const day = 24 * time.Hour
+	fmt.Println(day.Seconds())
 }
