@@ -109,4 +109,7 @@ func main() {
 
 	str2 := "Hello \u4e16\u754c"
 	fmt.Println(str2) // 12
+
+	// var str3 string = nil // Can't use nil as the type of string
+
 }
