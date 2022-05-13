@@ -63,16 +63,20 @@ func (s *TaskState) UnmarshalJSON(b []byte) error {
 type Task struct {
 	Name  string    `json:"name"`
 	State TaskState `json:"state"`
+	// "Array and slice values encode as JSON arrays, except that []byte encodes as a base64-encoded string, and a nil slice encodes as the null JSON object."
+	// byte is the same as uint8
+	// 	UrlIndices []uint8     `json:"urlIndices"` // https://stackoverflow.com/questions/14177862/how-to-marshal-a-byte-uint8-array-as-json-array-in-go
+	UrlIndices []int `json:"urlIndices"`
 }
 
 func main() {
-	task1 := Task{Name: "go to church", State: Created}
-	task2 := Task{Name: "go to beach", State: Running}
+	task1 := Task{Name: "go to church", State: Created, UrlIndices: []int{0, 1}}
+	task2 := Task{Name: "go to beach", State: Running, UrlIndices: []int{1, 2, 3}}
 	tasks := []Task{task1, task2}
 
 	data, err := json.Marshal(tasks)
 	if err != nil {
-		log.Fatalf("JSON masshashing failed: %s", err)
+		log.Fatalf("JSON marshaling failed: %s", err)
 	}
 
 	fmt.Printf("%s\n", data)
@@ -93,15 +97,15 @@ func main() {
 	}
 
 	for _, task := range loadedTasks {
-		fmt.Printf("%+v\n", task)
 		fmt.Printf("%v\n", task)
+		fmt.Printf("%+v\n", task)
 	}
 
-	if loadedTasks[0] == task1 {
+	if fmt.Sprintf("%+v", loadedTasks[0]) == fmt.Sprintf("%+v", task1) {
 		fmt.Println("First task loaded successfully")
 	}
 
-	if loadedTasks[1] == task2 {
+	if fmt.Sprintf("%+v", loadedTasks[1]) == fmt.Sprintf("%+v", task2) {
 		fmt.Println("Second task loaded successfully")
 	}
 }
