@@ -1,1 +1,1 @@
-[{"name":"go to church","state":"Created","urlIndices":[0,1]},{"name":"go to beach","state":"Running","urlIndices":[1,2,3]}]
+[{"name":"go to church","UrlIndices":[0,1]},{"name":"go to beach","state":"Running","UrlIndices":[1,2,3]},{"name":"go to beach","UrlIndices":[1,2,3]},{"state":"Finished","UrlIndices":[1,2,3]}]

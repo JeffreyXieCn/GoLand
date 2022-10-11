@@ -61,18 +61,20 @@ func (s *TaskState) UnmarshalJSON(b []byte) error {
 }
 
 type Task struct {
-	Name  string    `json:"name"`
-	State TaskState `json:"state"`
+	Name  string    `json:"name,omitempty"`
+	State TaskState `json:"state,omitempty"`
 	// "Array and slice values encode as JSON arrays, except that []byte encodes as a base64-encoded string, and a nil slice encodes as the null JSON object."
 	// byte is the same as uint8
 	// 	UrlIndices []uint8     `json:"urlIndices"` // https://stackoverflow.com/questions/14177862/how-to-marshal-a-byte-uint8-array-as-json-array-in-go
-	UrlIndices []int `json:"urlIndices"`
+	UrlIndices []int //`json:"urlIndices"`
 }
 
 func main() {
 	task1 := Task{Name: "go to church", State: Created, UrlIndices: []int{0, 1}}
 	task2 := Task{Name: "go to beach", State: Running, UrlIndices: []int{1, 2, 3}}
-	tasks := []Task{task1, task2}
+	task3 := Task{Name: "go to beach", UrlIndices: []int{1, 2, 3}}
+	task4 := Task{State: Finished, UrlIndices: []int{1, 2, 3}}
+	tasks := []Task{task1, task2, task3, task4}
 
 	data, err := json.Marshal(tasks)
 	if err != nil {
@@ -97,15 +99,22 @@ func main() {
 	}
 
 	for _, task := range loadedTasks {
-		fmt.Printf("%v\n", task)
+		fmt.Printf("\n%v\n", task)
 		fmt.Printf("%+v\n", task)
+		fmt.Printf("%#v\n", task)
 	}
 
-	if fmt.Sprintf("%+v", loadedTasks[0]) == fmt.Sprintf("%+v", task1) {
-		fmt.Println("First task loaded successfully")
+	for i, task := range loadedTasks {
+		if fmt.Sprintf("%+v", task) == fmt.Sprintf("%+v", tasks[i]) {
+			fmt.Printf("Task%d loaded successfully\n", i+1)
+		}
 	}
 
-	if fmt.Sprintf("%+v", loadedTasks[1]) == fmt.Sprintf("%+v", task2) {
-		fmt.Println("Second task loaded successfully")
-	}
+	//if fmt.Sprintf("%+v", loadedTasks[0]) == fmt.Sprintf("%+v", task1) {
+	//	fmt.Println("First task loaded successfully")
+	//}
+	//
+	//if fmt.Sprintf("%+v", loadedTasks[1]) == fmt.Sprintf("%+v", task2) {
+	//	fmt.Println("Second task loaded successfully")
+	//}
 }
