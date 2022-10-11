@@ -153,6 +153,12 @@ func main() {
 	sliceToAppend = append(sliceToAppend, 6)
 	printSlice(sliceToAppend) // len=7 cap=12 [0 1 2 3 4 5 6]
 
+	fmt.Println("\nFilter positive numbers")
+	ints := []int{1, -2, 3, -4, 5}
+	filtered := filterPositiveNumbers(ints)
+	printSlice2("ints", ints)
+	printSlice2("filtered", filtered)
+
 }
 
 func printSlice(s []int) {
@@ -162,4 +168,15 @@ func printSlice(s []int) {
 func printSlice2(s string, x []int) {
 	fmt.Printf("%s len=%d cap=%d %v\n",
 		s, len(x), cap(x), x)
+}
+
+func filterPositiveNumbers(ints []int) []int {
+	filtered := ints[:0]
+	for _, val := range ints {
+		if val > 0 {
+			filtered = append(filtered, val)
+		}
+	}
+
+	return filtered
 }
