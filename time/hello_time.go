@@ -19,4 +19,14 @@ func main() {
 	header |= uint32(today.YearDay())
 
 	fmt.Printf("header (the first element in the ETT array): %v", header)
+
+	var t time.Time
+	fmt.Println("\nZero time:", t)
+	fmt.Println("\nZero time UnixNano:", t.UnixNano())
+	fmt.Println("\nzero time IsZero:", t.IsZero())
+
+	t2 := time.Unix(0, 0)
+	fmt.Println("\nUnix zero time:", t2)
+	fmt.Println("\nUnix zero time UnixNano:", t2.UnixNano())
+	fmt.Println("\nUnix zero time IsZero:", t2.IsZero())
 }
