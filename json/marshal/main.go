@@ -22,10 +22,6 @@ const (
 	Errorred
 )
 
-func (s TaskState) String() string {
-	return toString[s]
-}
-
 var toString = map[TaskState]string{
 	Created:  "Created",
 	Running:  "Running",
@@ -40,10 +36,14 @@ var toID = map[string]TaskState{
 	"Errorred": Errorred,
 }
 
+func (s *TaskState) String() string {
+	return toString[*s]
+}
+
 // MarshalJSON marshals the enum as a quoted json string
-func (s TaskState) MarshalJSON() ([]byte, error) {
+func (s *TaskState) MarshalJSON() ([]byte, error) {
 	buffer := bytes.NewBufferString(`"`)
-	buffer.WriteString(toString[s])
+	buffer.WriteString(toString[*s])
 	buffer.WriteString(`"`)
 	return buffer.Bytes(), nil
 }
@@ -107,14 +107,8 @@ func main() {
 	for i, task := range loadedTasks {
 		if fmt.Sprintf("%+v", task) == fmt.Sprintf("%+v", tasks[i]) {
 			fmt.Printf("Task%d loaded successfully\n", i+1)
+		} else {
+			fmt.Printf("Task%d loaded unsuccessfully\n", i+1)
 		}
 	}
-
-	//if fmt.Sprintf("%+v", loadedTasks[0]) == fmt.Sprintf("%+v", task1) {
-	//	fmt.Println("First task loaded successfully")
-	//}
-	//
-	//if fmt.Sprintf("%+v", loadedTasks[1]) == fmt.Sprintf("%+v", task2) {
-	//	fmt.Println("Second task loaded successfully")
-	//}
 }
