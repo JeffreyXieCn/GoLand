@@ -1,0 +1,30 @@
+syntax = "proto3";
+package api;
+
+// AdNetworkName - name of the ad network
+enum AdNetworkName {
+  ADMOB = 0;
+  FACEBOOK = 1;
+  UNITY = 2;
+  MOPUB = 3;
+  ADCOLONY = 4;
+  IRONSOURCE = 5;
+  APPLOVIN = 6;
+  VUNGLE = 7;
+  MINTEGRAL = 8;
+  SNAPCHAT = 9;
+  PANGLE = 10;
+  CROSS_PROMO = 11;
+}
+
+// Platform of the game with the configured waterfall
+enum Platform {
+  IOS = 0;
+  ANDROID = 1;
+}
+
+enum UsageType {
+  UNKNOWN_USAGE_TYPE = 0;
+  TRADITIONAL = 1;
+  HEADER_BIDDER = 2;
+}

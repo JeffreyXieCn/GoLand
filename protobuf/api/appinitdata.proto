@@ -1,0 +1,23 @@
+syntax = "proto3";
+package api;
+
+import "enums.proto";
+
+// AppInitData contains the application initialization for each game.
+message AppInitData{
+  string id = 1;
+  string core_organization_id = 2;
+  string publisher_app_id = 3;
+  Platform platform = 4;
+  repeated NetworkParam networks = 5;
+  int64 createdAt = 6;
+  string version = 7;
+  bool coppa = 8; // whether flagged as coppa, ie a game suitable for children
+
+  // name means "network and init params"
+  message NetworkParam{
+    AdNetworkName name = 1;
+    UsageType type = 2;
+    map<string, string> adapter_parameters = 3;
+  }
+}

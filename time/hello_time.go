@@ -9,6 +9,7 @@ func main() {
 
 	now := time.Now().UTC()
 	fmt.Printf("Now: %v\n", now)
+	fmt.Printf("Now in UnixNano: %v\n", now.UnixNano())
 	today := time.Date(now.Year(), 1, now.YearDay(), 0, 0, 0, 0, time.UTC)
 	fmt.Printf("Today: %v\n", today)
 	today2 := time.Date(now.Year(), now.Month(), now.Day(), 0, 0, 0, 0, time.UTC)
