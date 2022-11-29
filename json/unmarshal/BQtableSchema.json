@@ -1,0 +1,662 @@
+{
+  "createTime": "2022-11-25 17:23:49.086",
+  "revisionDescription": "Updated schema with ID GGN1uNaUaj62bmRTkQnpR2UygrKn/nqv7b6vfQKT99c= with supplied valid evolution",
+  "schema": {
+    "fields": [
+      {
+        "default": null,
+        "docstring": "Originating ad network",
+        "name": "ad_network",
+        "namespace": "com.unity3d.data.schemas.ads.secondaryconversion.purchase_v1",
+        "type": [
+          "null",
+          "string"
+        ],
+        "uuid": "38a5b344-8c6d-3e06-b541-ec9739a69d95"
+      },
+      {
+        "default": null,
+        "docstring": "Advertiser name",
+        "name": "advertiser_name",
+        "namespace": "com.unity3d.data.schemas.ads.secondaryconversion.purchase_v1",
+        "type": [
+          "null",
+          "string"
+        ],
+        "uuid": "7592bdbb-54a9-3dc5-ac69-ba27bf6612c2"
+      },
+      {
+        "default": null,
+        "docstring": "MD5 hash of Android ID",
+        "name": "android_id_md5",
+        "namespace": "com.unity3d.data.schemas.ads.secondaryconversion.purchase_v1",
+        "transcoders": [
+          {
+            "inputType": "string",
+            "name": "hashToPIIAndExtractValue",
+            "outputType": "string"
+          }
+        ],
+        "type": [
+          "null",
+          "string"
+        ],
+        "uuid": "95f04998-cf62-32b4-8ecc-3cb53d85495e"
+      },
+      {
+        "default": null,
+        "docstring": "Application name",
+        "name": "app_name",
+        "namespace": "com.unity3d.data.schemas.ads.secondaryconversion.purchase_v1",
+        "type": [
+          "null",
+          "string"
+        ],
+        "uuid": "e8162d28-9e54-3d48-bbab-3dc3c09bd61e"
+      },
+      {
+        "default": null,
+        "docstring": "Application version",
+        "name": "app_version",
+        "namespace": "com.unity3d.data.schemas.ads.secondaryconversion.purchase_v1",
+        "type": [
+          "null",
+          "string"
+        ],
+        "uuid": "6cc3f7e7-a951-38b0-bbf7-71f8887ac8db"
+      },
+      {
+        "default": null,
+        "docstring": "Bundle ID",
+        "name": "bundle_id",
+        "namespace": "com.unity3d.data.schemas.ads.secondaryconversion.purchase_v1",
+        "type": [
+          "null",
+          "string"
+        ],
+        "uuid": "46c63765-0681-3fb1-a7ba-3e12f518c840"
+      },
+      {
+        "default": null,
+        "docstring": "Campaign ID / Audience ID",
+        "name": "campaign_id",
+        "namespace": "com.unity3d.data.schemas.ads.secondaryconversion.purchase_v1",
+        "type": [
+          "null",
+          "string"
+        ],
+        "uuid": "7481c88e-aefb-300a-971e-d07c2d94ed23"
+      },
+      {
+        "default": null,
+        "docstring": "Click timestamp",
+        "name": "click_ts",
+        "namespace": "com.unity3d.data.schemas.ads.secondaryconversion.purchase_v1",
+        "transcoders": [
+          {
+            "name": "stringDateTimeToTimestamp"
+          }
+        ],
+        "type": [
+          "null",
+          {
+            "logicalType": "timestamp-millis",
+            "type": "long"
+          }
+        ],
+        "uuid": "e394620a-ea56-3be3-a941-fe87e81c247a"
+      },
+      {
+        "default": null,
+        "docstring": "Country",
+        "name": "country",
+        "namespace": "com.unity3d.data.schemas.ads.secondaryconversion.purchase_v1",
+        "type": [
+          "null",
+          "string"
+        ],
+        "uuid": "7fb1de3f-665e-39e2-afab-a10b875d65ad"
+      },
+      {
+        "default": null,
+        "docstring": "Value currency",
+        "name": "currency",
+        "namespace": "com.unity3d.data.schemas.ads.secondaryconversion.purchase_v1",
+        "type": [
+          "null",
+          "string"
+        ],
+        "uuid": "7c6a484a-59cf-3d3b-8375-b1dfbbfae2b2"
+      },
+      {
+        "default": null,
+        "docstring": "Custom event type",
+        "name": "custom_event",
+        "namespace": "com.unity3d.data.schemas.ads.secondaryconversion.purchase_v1",
+        "type": [
+          "null",
+          "string"
+        ],
+        "uuid": "0ea78025-e826-3258-954b-dc1af61e2d37"
+      },
+      {
+        "default": null,
+        "docstring": "Device type",
+        "name": "device_type",
+        "namespace": "com.unity3d.data.schemas.ads.secondaryconversion.purchase_v1",
+        "type": [
+          "null",
+          "string"
+        ],
+        "uuid": "4abc0499-84d3-3130-a2df-69fbe4435e7e"
+      },
+      {
+        "default": null,
+        "docstring": "Device model",
+        "name": "devicemodel",
+        "namespace": "com.unity3d.data.schemas.ads.secondaryconversion.purchase_v1",
+        "type": [
+          "null",
+          "string"
+        ],
+        "uuid": "becd2df8-90be-4444-be41-504bcb67aa1f"
+      },
+      {
+        "default": null,
+        "docstring": "Event type",
+        "name": "event",
+        "namespace": "com.unity3d.data.schemas.ads.secondaryconversion.purchase_v1",
+        "type": [
+          "null",
+          "string"
+        ],
+        "uuid": "fb3e2766-f55f-3087-b416-43f2b0efb100"
+      },
+      {
+        "default": null,
+        "docstring": "Game ID",
+        "name": "game_id",
+        "namespace": "com.unity3d.data.schemas.ads.secondaryconversion.purchase_v1",
+        "type": [
+          "null",
+          "string"
+        ],
+        "uuid": "c0eaa70c-1826-3a46-9292-3fc94f5fc7e8"
+      },
+      {
+        "default": null,
+        "docstring": "Gamer ID",
+        "extractors": [
+          "ComplianceKeyExtractor"
+        ],
+        "name": "gamerId",
+        "namespace": "com.unity3d.data.schemas.ads.secondaryconversion.purchase_v1",
+        "transcoders": [
+          {
+            "inputType": "string",
+            "name": "hashToPIIAndExtractValue",
+            "outputType": "string"
+          }
+        ],
+        "type": [
+          "null",
+          "string"
+        ],
+        "uuid": "50435d5b-8248-335c-8069-899a86e1273c"
+      },
+      {
+        "default": null,
+        "docstring": "Gamer ID",
+        "extractors": [
+          "ComplianceKeyExtractor"
+        ],
+        "name": "gamer_id",
+        "namespace": "com.unity3d.data.schemas.ads.secondaryconversion.purchase_v1",
+        "transcoders": [
+          {
+            "inputType": "string",
+            "name": "hashToPIIAndExtractValue",
+            "outputType": "string"
+          }
+        ],
+        "type": [
+          "null",
+          "string"
+        ],
+        "uuid": "50435d5b-8248-335c-8069-899a86e1273c"
+      },
+      {
+        "default": null,
+        "docstring": "IAP receipt ID",
+        "name": "iap_receipt",
+        "namespace": "com.unity3d.data.schemas.ads.secondaryconversion.purchase_v1",
+        "type": [
+          "null",
+          "string"
+        ],
+        "uuid": "2650b0f9-b22e-3aa9-8e48-eed539c3a2a6"
+      },
+      {
+        "default": null,
+        "docstring": "Apple ID for advertisers",
+        "name": "ifa",
+        "namespace": "com.unity3d.data.schemas.ads.secondaryconversion.purchase_v1",
+        "transcoders": [
+          {
+            "inputType": "string",
+            "name": "hashToPIIAndExtractValue",
+            "outputType": "string"
+          }
+        ],
+        "type": [
+          "null",
+          "string"
+        ],
+        "uuid": "22e4c78f-290a-30d5-98eb-8843bcd7b17a"
+      },
+      {
+        "default": null,
+        "docstring": "Impression timestamp",
+        "name": "impression_ts",
+        "namespace": "com.unity3d.data.schemas.ads.secondaryconversion.purchase_v1",
+        "transcoders": [
+          {
+            "name": "stringDateTimeToTimestamp"
+          }
+        ],
+        "type": [
+          "null",
+          {
+            "logicalType": "timestamp-millis",
+            "type": "long"
+          }
+        ],
+        "uuid": "40c8f009-cf6e-374a-b489-0ac951005c9a"
+      },
+      {
+        "default": null,
+        "docstring": "Install timestamp",
+        "name": "install_ts",
+        "namespace": "com.unity3d.data.schemas.ads.secondaryconversion.purchase_v1",
+        "transcoders": [
+          {
+            "name": "stringDateTimeToTimestamp"
+          }
+        ],
+        "type": [
+          "null",
+          {
+            "logicalType": "timestamp-millis",
+            "type": "long"
+          }
+        ],
+        "uuid": "874234fb-c44d-3a52-9a26-637e35755692"
+      },
+      {
+        "default": null,
+        "docstring": "User IP address",
+        "name": "ip",
+        "namespace": "com.unity3d.data.schemas.ads.secondaryconversion.purchase_v1",
+        "transcoders": [
+          {
+            "inputType": "string",
+            "name": "hashToPIIAndExtractValue",
+            "outputType": "string"
+          }
+        ],
+        "type": [
+          "null",
+          "string"
+        ],
+        "uuid": "e5e31df7-6dc7-37aa-ba52-7658a4380d5c"
+      },
+      {
+        "default": null,
+        "docstring": "Is this the user's first purchase, 0 or 1",
+        "name": "is_first_purchase",
+        "namespace": "com.unity3d.data.schemas.ads.secondaryconversion.purchase_v1",
+        "type": [
+          "null",
+          "string"
+        ],
+        "uuid": "25559f38-720a-3286-a076-feddf03083a4"
+      },
+      {
+        "default": null,
+        "docstring": "Is this reattributed, 0 or 1",
+        "name": "is_reattributed",
+        "namespace": "com.unity3d.data.schemas.ads.secondaryconversion.purchase_v1",
+        "transcoders": [
+          {
+            "inputType": "string",
+            "name": "Cast",
+            "outputType": "int"
+          }
+        ],
+        "type": [
+          "null",
+          "int"
+        ],
+        "uuid": "e4594844-a99a-4a23-b843-f60ece6ac0fa"
+      },
+      {
+        "default": null,
+        "docstring": "?",
+        "name": "json",
+        "namespace": "com.unity3d.data.schemas.ads.secondaryconversion.purchase_v1",
+        "type": [
+          "null",
+          "string"
+        ],
+        "uuid": "6782a8c5-62ae-3822-a974-61262b9a62ef"
+      },
+      {
+        "default": null,
+        "docstring": "User's language",
+        "name": "language",
+        "namespace": "com.unity3d.data.schemas.ads.secondaryconversion.purchase_v1",
+        "type": [
+          "null",
+          "string"
+        ],
+        "uuid": "a7e155ff-d4fc-35a3-bcdc-d990c0ce6507"
+      },
+      {
+        "default": null,
+        "docstring": "Platform version",
+        "name": "os_version",
+        "namespace": "com.unity3d.data.schemas.ads.secondaryconversion.purchase_v1",
+        "type": [
+          "null",
+          "string"
+        ],
+        "uuid": "6dd6a50b-4e8c-3315-8b51-11c672955e6a"
+      },
+      {
+        "default": null,
+        "docstring": "Partner parameters feature on MMPs' Unity module (e.g. Adjust) which allow us to receive additional client data.",
+        "name": "partner_params",
+        "namespace": "com.unity3d.data.schemas.ads.secondaryconversion.purchase_v1",
+        "type": [
+          "null",
+          "string"
+        ],
+        "uuid": "48495cde-df07-4c5e-8649-25c011c6d601"
+      },
+      {
+        "default": null,
+        "docstring": "Platform name",
+        "name": "platform",
+        "namespace": "com.unity3d.data.schemas.ads.secondaryconversion.purchase_v1",
+        "type": [
+          "null",
+          "string"
+        ],
+        "uuid": "980854ab-49bc-313d-97b2-63b64d0b2089"
+      },
+      {
+        "default": null,
+        "docstring": "Purchase status",
+        "name": "purchase_status",
+        "namespace": "com.unity3d.data.schemas.ads.secondaryconversion.purchase_v1",
+        "type": [
+          "null",
+          "string"
+        ],
+        "uuid": "8e25b910-1d2a-39cb-97c4-ade48b12f00e"
+      },
+      {
+        "default": null,
+        "docstring": "Revenue in USD",
+        "name": "revenue_usd",
+        "namespace": "com.unity3d.data.schemas.ads.secondaryconversion.purchase_v1",
+        "type": [
+          "null",
+          "string"
+        ],
+        "uuid": "c63c493c-bdcd-3f32-88f6-04f8f6ed5189"
+      },
+      {
+        "default": null,
+        "docstring": "SDK event name",
+        "name": "sdk_event_name",
+        "namespace": "com.unity3d.data.schemas.ads.secondaryconversion.purchase_v1",
+        "type": [
+          "null",
+          "string"
+        ],
+        "uuid": "a00124c1-55b3-33b6-b0fd-1434ffd4d43f"
+      },
+      {
+        "default": null,
+        "docstring": "SDK timestamp",
+        "name": "sdk_ts",
+        "namespace": "com.unity3d.data.schemas.ads.secondaryconversion.purchase_v1",
+        "transcoders": [
+          {
+            "name": "stringDateTimeToTimestamp"
+          }
+        ],
+        "type": [
+          "null",
+          {
+            "logicalType": "timestamp-millis",
+            "type": "long"
+          }
+        ],
+        "uuid": "9dd7dc85-72ca-3fa4-8c21-accc4e98625d"
+      },
+      {
+        "default": null,
+        "docstring": "Store ID",
+        "name": "store_id",
+        "namespace": "com.unity3d.data.schemas.ads.secondaryconversion.purchase_v1",
+        "type": [
+          "null",
+          "string"
+        ],
+        "uuid": "31a84e73-88bb-33ca-9409-ff21987ab855"
+      },
+      {
+        "default": null,
+        "docstring": "Whether tracking is allowed, 0 or 1",
+        "name": "tracking_enabled",
+        "namespace": "com.unity3d.data.schemas.ads.secondaryconversion.purchase_v1",
+        "type": [
+          "null",
+          "string"
+        ],
+        "uuid": "7bc11d05-ce09-399e-9749-70ac4e3c898f"
+      },
+      {
+        "default": null,
+        "docstring": "Whether tracking is NOT allowed, 0 or 1",
+        "name": "tracking_limited",
+        "namespace": "com.unity3d.data.schemas.ads.secondaryconversion.purchase_v1",
+        "type": [
+          "null",
+          "string"
+        ],
+        "uuid": "108cdadd-7b55-3f7c-9971-d35ccf75cefe"
+      },
+      {
+        "default": null,
+        "docstring": "Tracking partner",
+        "name": "tracking_partner",
+        "namespace": "com.unity3d.data.schemas.ads.secondaryconversion.purchase_v1",
+        "type": [
+          "null",
+          "string"
+        ],
+        "uuid": "a7ccd7c2-4726-3804-b4c4-60ac153bb28c"
+      },
+      {
+        "default": null,
+        "docstring": "Traffic rule",
+        "name": "traffic_rule",
+        "namespace": "com.unity3d.data.schemas.ads.secondaryconversion.purchase_v1",
+        "type": [
+          "null",
+          "string"
+        ],
+        "uuid": "f25ae1d5-f2a4-39ed-885e-ff1c12b33b81"
+      },
+      {
+        "default": null,
+        "docstring": "Traffic validated",
+        "name": "traffic_validated",
+        "namespace": "com.unity3d.data.schemas.ads.secondaryconversion.purchase_v1",
+        "type": [
+          "null",
+          "string"
+        ],
+        "uuid": "1a5ef4db-272e-3c28-9138-9e47d91d6eba"
+      },
+      {
+        "default": null,
+        "docstring": "Traffic value",
+        "name": "traffic_value",
+        "namespace": "com.unity3d.data.schemas.ads.secondaryconversion.purchase_v1",
+        "type": [
+          "null",
+          "string"
+        ],
+        "uuid": "518061c1-0e22-3994-b156-e3f9c8b19148"
+      },
+      {
+        "default": null,
+        "docstring": "Event timestamp",
+        "name": "ts",
+        "namespace": "com.unity3d.data.schemas.ads.secondaryconversion.purchase_v1",
+        "transcoders": [
+          {
+            "name": "stringDateTimeToTimestamp"
+          }
+        ],
+        "type": [
+          "null",
+          {
+            "logicalType": "timestamp-millis",
+            "type": "long"
+          }
+        ],
+        "uuid": "3d10bdf8-4268-3398-9562-32d3deb48269"
+      },
+      {
+        "default": null,
+        "docstring": "User agent",
+        "name": "user_agent",
+        "namespace": "com.unity3d.data.schemas.ads.secondaryconversion.purchase_v1",
+        "type": [
+          "null",
+          "string"
+        ],
+        "uuid": "be6deab5-5c4a-367b-b0d0-463a3b8b8b47"
+      },
+      {
+        "default": null,
+        "docstring": "Value in local currency",
+        "name": "value",
+        "namespace": "com.unity3d.data.schemas.ads.secondaryconversion.purchase_v1",
+        "type": [
+          "null",
+          "string"
+        ],
+        "uuid": "aa0235da-8c69-3095-a4fa-a74cecfc4764"
+      },
+      {
+        "default": null,
+        "docstring": "Value type",
+        "name": "value_type",
+        "namespace": "com.unity3d.data.schemas.ads.secondaryconversion.purchase_v1",
+        "type": [
+          "null",
+          "string"
+        ],
+        "uuid": "dab09058-8cd4-37f0-ab82-554a7fff3d39"
+      },
+      {
+        "default": null,
+        "docstring": "Was this conversion attributed, 0 or 1",
+        "name": "was_conversion_attributed",
+        "namespace": "com.unity3d.data.schemas.ads.secondaryconversion.purchase_v1",
+        "type": [
+          "null",
+          "string"
+        ],
+        "uuid": "034349c9-cb22-32b8-9640-a3e1292c29dc"
+      },
+      {
+        "default": null,
+        "docstring": "Unique event identifier (UUID)",
+        "name": "correlation_id",
+        "namespace": "com.unity3d.data.schemas.ads.secondaryconversion.purchase_v1",
+        "type": [
+          "null",
+          "string"
+        ],
+        "uuid": "cdb1bdd7-ba93-45fd-8035-28076db999ce"
+      },
+      {
+        "default": null,
+        "docstring": "Ad revenue sum USD",
+        "name": "adRevSumUsd",
+        "namespace": "com.unity3d.data.schemas.ads.secondaryconversion.purchase_v1",
+        "type": [
+          "null",
+          "string"
+        ],
+        "uuid": "93d737e1-cc2b-45a8-8cff-1f0897d11d29"
+      },
+      {
+        "default": null,
+        "docstring": "Count of ad impressions",
+        "name": "ad_impressions_count",
+        "namespace": "com.unity3d.data.schemas.ads.secondaryconversion.purchase_v1",
+        "type": [
+          "null",
+          "string"
+        ],
+        "uuid": "36b8a890-8bb8-4067-9e53-2a431a926899"
+      },
+      {
+        "default": null,
+        "docstring": "Campaign name",
+        "name": "campaign_name",
+        "namespace": "com.unity3d.data.schemas.ads.secondaryconversion.purchase_v1",
+        "type": [
+          "null",
+          "string"
+        ],
+        "uuid": "ba78a3ff-2bf6-48be-afc2-531bae5821fb"
+      },
+      {
+        "default": null,
+        "docstring": "Is first event",
+        "name": "is_first_event",
+        "namespace": "com.unity3d.data.schemas.ads.secondaryconversion.purchase_v1",
+        "type": [
+          "null",
+          "string"
+        ],
+        "uuid": "700a7513-fd40-40a4-8b7b-b6a2180a1a4a"
+      },
+      {
+        "default": null,
+        "docstring": "Project ID",
+        "name": "project_id",
+        "namespace": "com.unity3d.data.schemas.ads.secondaryconversion.purchase_v1",
+        "type": [
+          "null",
+          "string"
+        ],
+        "uuid": "347173de-9841-4ad0-b4cb-e91996f9d03a"
+      }
+    ],
+    "name": "purchase_v1",
+    "namespace": "com.unity3d.data.schemas.ads.secondaryconversion",
+    "type": "record"
+  },
+  "schemaID": "GGN1uNaUaj62bmRTkQnpR2UygrKn/nqv7b6vfQKT99c=",
+  "schemaSerialId": 4386
+}
