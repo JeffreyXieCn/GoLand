@@ -18,6 +18,24 @@ var (
 	p  = &Vertex{1, 2} // has type *Vertex
 )
 
+type Person struct {
+	Name   string
+	Age    int
+	Scores map[string]int
+}
+
+func (p Person) Clone() Person {
+	c := Person{}
+	c.Name = p.Name
+	c.Age = p.Age
+	c.Scores = map[string]int{}
+	for k, v := range p.Scores {
+		c.Scores[k] = v
+	}
+
+	return c
+}
+
 func main() {
 	fmt.Println(v1, v2, v3, p)
 	changeVertex(v1)
@@ -40,8 +58,22 @@ func main() {
 	v3d1c.X++
 	v3d1c.Y++
 	*v3d1c.Z++
-	fmt.Printf("\nv3d1c: %+v, v3d1c.Z: %d", v3d1c, *v3d1c.Z)
-	fmt.Printf("\nv3d1: %+v, v3d1.Z: %d", v3d1, *v3d1.Z)
+	fmt.Printf("\nv3d1c: %+v, v3d1c.Z: %d\n", v3d1c, *v3d1c.Z)
+	fmt.Printf("\nv3d1: %+v, v3d1.Z: %d\n", v3d1, *v3d1.Z)
+
+	// deep copy (clone) struct
+	alice1 := Person{"Alice", 30, map[string]int{"math": 90, "english": 100}}
+	alice2 := alice1
+	alice3 := alice1.Clone()
+	//fmt.Println(alice1 == alice2)   // => struct containing map[string]int cannot be compared
+	fmt.Println(&alice1 == &alice2) // => false, they have different addresses
+	fmt.Println(&alice1 == &alice3) // => false, they have different addresses
+
+	alice1.Age += 10
+	delete(alice1.Scores, "math")
+	fmt.Printf("alice1: %v\n", alice1)
+	fmt.Printf("alice2: %v\n", alice2)
+	fmt.Printf("alice3: %v\n", alice3)
 }
 
 func changeVertex(v Vertex) {
