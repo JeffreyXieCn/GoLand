@@ -113,9 +113,9 @@ func main() {
 	// Slices of slices
 	// Create a tic-tac-toe board.
 	board := [][]string{
-		[]string{"_", "_", "_"},
-		[]string{"_", "_", "_"},
-		[]string{"_", "_", "_"},
+		{"_", "_", "_"},
+		{"_", "_", "_"},
+		{"_", "_", "_"},
 	}
 
 	// The players take turns.
@@ -158,6 +158,18 @@ func main() {
 	filtered := filterPositiveNumbers(ints)
 	printSlice2("ints", ints)
 	printSlice2("filtered", filtered)
+
+	droppedFields := []string{"unity", "jeffrey"}
+	//droppedFields := []string{"unity"}
+	fmt.Printf("droppedFields: %v\n", droppedFields)
+	fmt.Printf("droppedFields: %+v\n", droppedFields)
+	fmt.Printf("droppedFields: %#v\n", droppedFields)
+
+	fmt.Printf("droppedFields: %q\n", droppedFields)
+	fmt.Printf("droppedFields: %+q\n", droppedFields)
+	fmt.Printf("droppedFields: %#q\n", droppedFields)
+
+	fmt.Printf("droppedFields: %v\n", strings.Join(droppedFields, ","))
 
 }
 
